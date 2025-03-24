@@ -89,7 +89,7 @@ function setupBuffers(shader) {
 function render() {
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.bindVertexArray(vao);
-    gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
+    gl.drawArrays(gl.TRIANGLE_FAN, 0, 6);
 }
 
 async function main() {
