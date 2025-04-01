@@ -130,7 +130,7 @@ function normalizeCoords(x, y) {
 
 // Update circle information display
 function updateCircleInfo() {
-    setupText(canvas, `Circle: center (${circle.center[0].toFixed(2)}, ${circle.center[1].toFixed(2)}), radius = ${circle.radius.toFixed(2)}`, 1);
+    setupText(canvas, `Circle: center (${circle.center[0].toFixed(2)}, ${circle.center[1].toFixed(2)}) radius = ${circle.radius.toFixed(2)}`, 1);
 }
 
 // Update line information display
