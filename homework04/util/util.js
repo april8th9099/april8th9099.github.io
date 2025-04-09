@@ -66,9 +66,9 @@ export class Axes {
 
         // 버텍스 데이터
         this.vertices = new Float32Array([
-            -length, 0.0, 0.0,  length, 0.0, 0.0,  // x축
-            0.0, -length, 0.0,  0.0, length, 0.0,  // y축
-            0.0, 0.0, -length,  0.0, 0.0, length   // z축
+            -length, 0.0, -0.01,  length, 0.0, -0.01,  // x축
+            0.0, -length, -0.01,  0.0, length, -0.01,  // y축
+            0.0, 0.0, -length-0.01,  0.0, 0.0, length-0.01   // z축
         ]);
 
         // 색상 데이터
