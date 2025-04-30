@@ -1,8 +1,8 @@
-import { resizeAspectRatio, Axes } from '../util/util.js';
-import { Shader, readShaderFile } from '../util/shader.js';
+import { resizeAspectRatio, Axes } from './util/util.js';
+import { Shader, readShaderFile } from './util/shader.js';
 import { RegularOctahedron } from './regularOctahedron.js';
-import { Arcball } from '../util/arcball.js';
-import { loadTexture } from '../util/texture.js';
+import { Arcball } from './util/arcball.js';
+import { loadTexture } from './util/texture.js';
 
 const canvas = document.getElementById('glCanvas');
 const gl = canvas.getContext('webgl2');
@@ -14,7 +14,7 @@ let viewMatrix = mat4.create();
 let projMatrix = mat4.create();
 let modelMatrix = mat4.create();
 const axes = new Axes(gl, 1.5);
-const texture = loadTexture(gl, true, '../images/textures/sunrise.jpg');
+const texture = loadTexture(gl, true, './images/textures/sunrise.jpg');
 const octahedron = new RegularOctahedron(gl);
 
 // Arcball object: initial distance 5.0, rotation sensitivity 2.0, zoom sensitivity 0.0005
