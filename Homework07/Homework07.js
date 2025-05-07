@@ -1,4 +1,4 @@
-import { resizeAspectRatio, setupText, updateText, Axes } from './util/util.js';
+import { resizeAspectRatio, setupText, updateText } from './util/util.js';
 import { Shader, readShaderFile } from './util/shader.js';
 import { Cube } from './util/cube.js';
 import { Cone } from './cone.js';
@@ -29,7 +29,6 @@ let lightingMode = 'PHONG'; // or 'GOURAUD'
 
 const cone = new Cone(gl, 32, { color: [1.0, 0.0, 0.0, 1.0] }); // orange color
 const lamp = new Cube(gl);
-const axes = new Axes(gl, 1.5);
 
 const cameraPos = vec3.fromValues(0, 0, 3);
 const lightPos = vec3.fromValues(1.0, 0.7, 1.0);
@@ -198,9 +197,6 @@ function render() {
     lampShader.setMat4('u_model', lampModelMatrix);
 
     lamp.draw(lampShader);
-
-    // drawing the axes (using the axes's shader: see util.js)
-    axes.draw(viewMatrix, projMatrix);
 
     // call the render function the next time for animation
     requestAnimationFrame(render);
