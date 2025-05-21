@@ -1,3 +1,4 @@
+// Homework09.js
 import * as THREE from 'three';
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 import { initRenderer, initCamera, initDefaultLighting, initOrbitControls, initStats } from './util.js';
@@ -37,34 +38,43 @@ const sun = new THREE.Mesh(sunGeometry, sunMaterial);
 scene.add(sun);
 
 // Planets
-const planetData = [
+const textureLoader = new THREE.TextureLoader();
+const planets = [];
+
+const planetConfigs = [
     { name: 'Mercury', radius: 1.5, distance: 20, color: '#a6a6a6', rotationSpeed: 0.02, orbitSpeed: 0.02 },
     { name: 'Venus', radius: 3, distance: 35, color: '#e39e1c', rotationSpeed: 0.015, orbitSpeed: 0.015 },
     { name: 'Earth', radius: 3.5, distance: 50, color: '#3498db', rotationSpeed: 0.01, orbitSpeed: 0.01 },
     { name: 'Mars', radius: 2.5, distance: 65, color: '#c0392b', rotationSpeed: 0.008, orbitSpeed: 0.008 }
 ];
 
-const textureLoader = new THREE.TextureLoader();
-const planets = [];
-
-planetData.forEach(data => {
-    const planetGroup = new THREE.Object3D();
-    const texture = textureLoader.load(`${data.name}.jpg`); // load texture using the name of the planet
+planetConfigs.forEach(config => {
+    const group = new THREE.Object3D();
+    const texture = textureLoader.load(`${config.name}.jpg`);
     const material = new THREE.MeshStandardMaterial({ map: texture });
-    const geometry = new THREE.SphereGeometry(data.radius, 32, 32);
+    const geometry = new THREE.SphereGeometry(config.radius, 32, 32);
     const planet = new THREE.Mesh(geometry, material);
-    planet.position.x = data.distance;
+    planet.position.x = config.distance;
     planet.castShadow = true;
+    group.add(planet);
+    scene.add(group);
 
-    planetGroup.add(planet);
-    scene.add(planetGroup);
-
-    planets.push({ ...data, mesh: planet, group: planetGroup });
+    const planetControl = {
+        rotationSpeed: config.rotationSpeed,
+        orbitSpeed: config.orbitSpeed
+    };
 
     // GUI
-    const folder = gui.addFolder(data.name + ' UI');
-    folder.add(data, 'rotationSpeed', 0, 0.05, 0.001);
-    folder.add(data, 'orbitSpeed', 0, 0.05, 0.001);
+    const folder = gui.addFolder(`${config.name} UI`);
+    folder.add(planetControl, 'rotationSpeed', 0, 0.05, 0.001);
+    folder.add(planetControl, 'orbitSpeed', 0, 0.05, 0.001);
+
+    planets.push({
+        name: config.name,
+        mesh: planet,
+        group: group,
+        control: planetControl
+    });
 });
 
 // Animate
@@ -72,8 +82,8 @@ function animate() {
     stats.update();
 
     planets.forEach(p => {
-        p.group.rotation.y += p.orbitSpeed;
-        p.mesh.rotation.y += p.rotationSpeed;
+        p.group.rotation.y += p.control.orbitSpeed;
+        p.mesh.rotation.y += p.control.rotationSpeed;
     });
 
     controls.update();
