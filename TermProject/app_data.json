@@ -1,0 +1,534 @@
+{
+  "jsphone": {
+    "brand": "YonseiCS",
+    "model": "JSPhone T30",
+    "cameraScore": 173,
+    "processorScore": 1925777,
+    "ramGB": 24,
+    "storageGB": 1536,
+    "batteryMah": 6661,
+    "displayInch": 7.1,
+    "weightG": 173
+  },
+  "competitors": [
+    {
+      "brand": "Apple",
+      "model": "iPhone 16 Pro Max",
+      "cameraScore": 157,
+      "processorScore": 1662243,
+      "ramGB": 8,
+      "storageGB": 1024,
+      "batteryMah": 4685,
+      "displayInch": 6.9,
+      "weightG": 227
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 16 Pro",
+      "cameraScore": 157,
+      "processorScore": 1653725,
+      "ramGB": 8,
+      "storageGB": 1024,
+      "batteryMah": 3582,
+      "displayInch": 6.3,
+      "weightG": 199
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 16 Plus",
+      "cameraScore": 147,
+      "processorScore": 1552454,
+      "ramGB": 8,
+      "storageGB": 512,
+      "batteryMah": 4674,
+      "displayInch": 6.7,
+      "weightG": 199
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 16",
+      "cameraScore": 147,
+      "processorScore": 1526241,
+      "ramGB": 8,
+      "storageGB": 512,
+      "batteryMah": 3561,
+      "displayInch": 6.1,
+      "weightG": 170
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "cameraScore": 154,
+      "processorScore": 1464105,
+      "ramGB": 8,
+      "storageGB": 1024,
+      "batteryMah": 4441,
+      "displayInch": 6.7,
+      "weightG": 221
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 15 Pro",
+      "cameraScore": 154,
+      "processorScore": 1493114,
+      "ramGB": 8,
+      "storageGB": 1024,
+      "batteryMah": 3274,
+      "displayInch": 6.1,
+      "weightG": 187
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 15 Plus",
+      "cameraScore": 145,
+      "processorScore": 1336861,
+      "ramGB": 6,
+      "storageGB": 512,
+      "batteryMah": 4383,
+      "displayInch": 6.7,
+      "weightG": 201
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 15",
+      "cameraScore": 145,
+      "processorScore": 1331039,
+      "ramGB": 6,
+      "storageGB": 512,
+      "batteryMah": 3349,
+      "displayInch": 6.1,
+      "weightG": 171
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 14 Pro Max",
+      "cameraScore": 146,
+      "processorScore": 1394390,
+      "ramGB": 6,
+      "storageGB": 1024,
+      "batteryMah": 4323,
+      "displayInch": 6.7,
+      "weightG": 240
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 14 Pro",
+      "cameraScore": 146,
+      "processorScore": 1397263,
+      "ramGB": 6,
+      "storageGB": 1024,
+      "batteryMah": 3200,
+      "displayInch": 6.1,
+      "weightG": 206
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 14 Plus",
+      "cameraScore": 133,
+      "processorScore": 1277421,
+      "ramGB": 6,
+      "storageGB": 512,
+      "batteryMah": 4325,
+      "displayInch": 6.7,
+      "weightG": 203
+    },
+    {
+      "brand": "Apple",
+      "model": "iPhone 14",
+      "cameraScore": 133,
+      "processorScore": 1274583,
+      "ramGB": 6,
+      "storageGB": 512,
+      "batteryMah": 3279,
+      "displayInch": 6.1,
+      "weightG": 172
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S25 Ultra",
+      "cameraScore": 146,
+      "processorScore": 2200737,
+      "ramGB": 12,
+      "storageGB": 1024,
+      "batteryMah": 5000,
+      "displayInch": 6.9,
+      "weightG": 218
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S25 Edge",
+      "cameraScore": 133,
+      "processorScore": 1995054,
+      "ramGB": 12,
+      "storageGB": 512,
+      "batteryMah": 3900,
+      "displayInch": 6.7,
+      "weightG": 163
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S25+",
+      "cameraScore": 138,
+      "processorScore": 2033285,
+      "ramGB": 12,
+      "storageGB": 512,
+      "batteryMah": 4900,
+      "displayInch": 6.7,
+      "weightG": 190
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S25",
+      "cameraScore": 138,
+      "processorScore": 2020532,
+      "ramGB": 12,
+      "storageGB": 512,
+      "batteryMah": 4000,
+      "displayInch": 6.2,
+      "weightG": 162
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S24 Ultra",
+      "cameraScore": 144,
+      "processorScore": 1757183,
+      "ramGB": 12,
+      "storageGB": 1024,
+      "batteryMah": 5000,
+      "displayInch": 6.8,
+      "weightG": 232
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S24+",
+      "cameraScore": 133,
+      "processorScore": 1622421,
+      "ramGB": 12,
+      "storageGB": 512,
+      "batteryMah": 4900,
+      "displayInch": 6.7,
+      "weightG": 196
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S24",
+      "cameraScore": 133,
+      "processorScore": 1565585,
+      "ramGB": 8,
+      "storageGB": 512,
+      "batteryMah": 4000,
+      "displayInch": 6.2,
+      "weightG": 167
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S24 FE",
+      "cameraScore": 133,
+      "processorScore": 1569756,
+      "ramGB": 8,
+      "storageGB": 512,
+      "batteryMah": 4700,
+      "displayInch": 6.7,
+      "weightG": 213
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S23 Ultra",
+      "cameraScore": 140,
+      "processorScore": 1443187,
+      "ramGB": 12,
+      "storageGB": 1024,
+      "batteryMah": 5000,
+      "displayInch": 6.8,
+      "weightG": 233
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S23+",
+      "cameraScore": 133,
+      "processorScore": 1418575,
+      "ramGB": 8,
+      "storageGB": 512,
+      "batteryMah": 4700,
+      "displayInch": 6.6,
+      "weightG": 195
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S23",
+      "cameraScore": 133,
+      "processorScore": 1419683,
+      "ramGB": 8,
+      "storageGB": 512,
+      "batteryMah": 3900,
+      "displayInch": 6.1,
+      "weightG": 168
+    },
+    {
+      "brand": "Samsung",
+      "model": "Galaxy S23 FE",
+      "cameraScore": 127,
+      "processorScore": 1062758,
+      "ramGB": 8,
+      "storageGB": 256,
+      "batteryMah": 4500,
+      "displayInch": 6.4,
+      "weightG": 209
+    },
+    {
+      "brand": "Huawei",
+      "model": "Mate 70 Pro+",
+      "cameraScore": 165,
+      "processorScore": 2607142,
+      "ramGB": 16,
+      "storageGB": 1024,
+      "batteryMah": 5700,
+      "displayInch": 6.9,
+      "weightG": 226
+    },
+    {
+      "brand": "Huawei",
+      "model": "Mate 70 Pro",
+      "cameraScore": 162,
+      "processorScore": 2459958,
+      "ramGB": 12,
+      "storageGB": 1024,
+      "batteryMah": 5500,
+      "displayInch": 6.9,
+      "weightG": 221
+    },
+    {
+      "brand": "Huawei",
+      "model": "Mate 70",
+      "cameraScore": 150,
+      "processorScore": 2402710,
+      "ramGB": 12,
+      "storageGB": 1024,
+      "batteryMah": 5300,
+      "displayInch": 6.7,
+      "weightG": 203
+    },
+    {
+      "brand": "Xiaomi",
+      "model": "Poco F7 Ultra",
+      "cameraScore": 152,
+      "processorScore": 2448398,
+      "ramGB": 16,
+      "storageGB": 512,
+      "batteryMah": 5300,
+      "displayInch": 6.7,
+      "weightG": 212
+    },
+    {
+      "brand": "Xiaomi",
+      "model": "Poco F7 Pro",
+      "cameraScore": 145,
+      "processorScore": 2326822,
+      "ramGB": 12,
+      "storageGB": 512,
+      "batteryMah": 6000,
+      "displayInch": 6.7,
+      "weightG": 206
+    },
+    {
+      "brand": "OPPO",
+      "model": "Find X8 Ultra",
+      "cameraScore": 140,
+      "processorScore": 2205156,
+      "ramGB": 16,
+      "storageGB": 1024,
+      "batteryMah": 6100,
+      "displayInch": 6.8,
+      "weightG": 226
+    },
+    {
+      "brand": "vivo",
+      "model": "X200 Ultra",
+      "cameraScore": 155,
+      "processorScore": 2471419,
+      "ramGB": 16,
+      "storageGB": 1024,
+      "batteryMah": 6000,
+      "displayInch": 6.8,
+      "weightG": 232
+    }
+  ],
+  "comparison_examples": [
+    {
+      "competitor": {
+        "brand": "Apple",
+        "model": "iPhone 16 Pro Max",
+        "cameraScore": 157,
+        "processorScore": 1662243,
+        "ramGB": 8,
+        "storageGB": 1024,
+        "batteryMah": 4685,
+        "displayInch": 6.9,
+        "weightG": 227
+      },
+      "comparisons": {
+        "camera": 10.2,
+        "processor": -82.2,
+        "ram": 200.0,
+        "storage": 50.0,
+        "battery": 42.2,
+        "display": 2.9,
+        "weight": 23.8
+      }
+    },
+    {
+      "competitor": {
+        "brand": "Apple",
+        "model": "iPhone 16 Pro",
+        "cameraScore": 157,
+        "processorScore": 1653725,
+        "ramGB": 8,
+        "storageGB": 1024,
+        "batteryMah": 3582,
+        "displayInch": 6.3,
+        "weightG": 199
+      },
+      "comparisons": {
+        "camera": 10.2,
+        "processor": -82.1,
+        "ram": 200.0,
+        "storage": 50.0,
+        "battery": 86.0,
+        "display": 12.7,
+        "weight": 13.1
+      }
+    },
+    {
+      "competitor": {
+        "brand": "Samsung",
+        "model": "Galaxy S25 Ultra",
+        "cameraScore": 146,
+        "processorScore": 2200737,
+        "ramGB": 12,
+        "storageGB": 1024,
+        "batteryMah": 5000,
+        "displayInch": 6.9,
+        "weightG": 218
+      },
+      "comparisons": {
+        "camera": 18.5,
+        "processor": -86.6,
+        "ram": 100.0,
+        "storage": 50.0,
+        "battery": 33.2,
+        "display": 2.9,
+        "weight": 20.6
+      }
+    },
+    {
+      "competitor": {
+        "brand": "Samsung",
+        "model": "Galaxy S24 Ultra",
+        "cameraScore": 144,
+        "processorScore": 1757183,
+        "ramGB": 12,
+        "storageGB": 1024,
+        "batteryMah": 5000,
+        "displayInch": 6.8,
+        "weightG": 232
+      },
+      "comparisons": {
+        "camera": 20.1,
+        "processor": -83.2,
+        "ram": 100.0,
+        "storage": 50.0,
+        "battery": 33.2,
+        "display": 4.4,
+        "weight": 25.4
+      }
+    },
+    {
+      "competitor": {
+        "brand": "Huawei",
+        "model": "Mate 70 Pro+",
+        "cameraScore": 165,
+        "processorScore": 2607142,
+        "ramGB": 16,
+        "storageGB": 1024,
+        "batteryMah": 5700,
+        "displayInch": 6.9,
+        "weightG": 226
+      },
+      "comparisons": {
+        "camera": 4.8,
+        "processor": -88.7,
+        "ram": 50.0,
+        "storage": 50.0,
+        "battery": 16.9,
+        "display": 2.9,
+        "weight": 23.5
+      }
+    },
+    {
+      "competitor": {
+        "brand": "Xiaomi",
+        "model": "Poco F7 Ultra",
+        "cameraScore": 152,
+        "processorScore": 2448398,
+        "ramGB": 16,
+        "storageGB": 512,
+        "batteryMah": 5300,
+        "displayInch": 6.7,
+        "weightG": 212
+      },
+      "comparisons": {
+        "camera": 13.8,
+        "processor": -87.9,
+        "ram": 50.0,
+        "storage": 200.0,
+        "battery": 25.7,
+        "display": 6.0,
+        "weight": 18.4
+      }
+    },
+    {
+      "competitor": {
+        "brand": "vivo",
+        "model": "X200 Ultra",
+        "cameraScore": 155,
+        "processorScore": 2471419,
+        "ramGB": 16,
+        "storageGB": 1024,
+        "batteryMah": 6000,
+        "displayInch": 6.8,
+        "weightG": 232
+      },
+      "comparisons": {
+        "camera": 11.6,
+        "processor": -88.0,
+        "ram": 50.0,
+        "storage": 50.0,
+        "battery": 11.0,
+        "display": 4.4,
+        "weight": 25.4
+      }
+    },
+    {
+      "competitor": {
+        "brand": "OPPO",
+        "model": "Find X8 Ultra",
+        "cameraScore": 140,
+        "processorScore": 2205156,
+        "ramGB": 16,
+        "storageGB": 1024,
+        "batteryMah": 6100,
+        "displayInch": 6.8,
+        "weightG": 226
+      },
+      "comparisons": {
+        "camera": 23.6,
+        "processor": -86.6,
+        "ram": 50.0,
+        "storage": 50.0,
+        "battery": 9.2,
+        "display": 4.4,
+        "weight": 23.5
+      }
+    }
+  ]
+}

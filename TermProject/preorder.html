@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JSPhone T30 Pre-Order</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .preorder-container {
+      max-width: 480px;
+      margin: 80px auto;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-32);
+      box-shadow: var(--shadow-md);
+    }
+
+    .preorder-container h2 {
+      margin-bottom: var(--space-24);
+      text-align: center;
+      font-size: var(--font-size-3xl);
+    }
+
+    .preorder-btn {
+      width: 100%;
+      margin-top: var(--space-24);
+    }
+  </style>
+</head>
+<body>
+  <div class="preorder-container">
+    <h2>Please fill below to be the earliest adopter</h2>
+    <div class="form-group">
+      <label class="form-label" for="name">Name</label>
+      <input class="form-control" type="text" id="name" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="country">Country</label>
+      <input class="form-control" type="text" id="country" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="phone">Phone number</label>
+      <input class="form-control" type="tel" id="phone" />
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="email">e-mail address</label>
+      <input class="form-control" type="email" id="email" />
+    </div>
+    <button class="btn btn--primary preorder-btn" onclick="submitPreorder()">Register for Pre-Order!</button>
+  </div>
+  <script src="preorder.js"></script>
+</body>
+</html>

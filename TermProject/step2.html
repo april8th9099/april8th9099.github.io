@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSPhone T30 Comparison</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.159.0/build/three.module.js"
+          }
+        }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'https://unpkg.com/three@0.159.0/examples/jsm/loaders/GLTFLoader.js';
+        window.THREE = THREE;
+        window.GLTFLoader = GLTFLoader;
+    </script>
+    <style>
+        .intro-3d-wrapper {
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        .intro-3d-canvas {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+        .intro-overlay-text {
+            position: absolute;
+            top: 20%;
+            font-size: 3rem;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            z-index: 5;
+        }
+        .enter-button {
+          position: absolute;
+          bottom: 60px;
+          padding: 12px 32px;
+          font-size: 18px;
+          background-color: #21808d;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          transition: background-color 0.3s ease;
+        }
+        .enter-button:hover {
+          background-color: #1d7480;
+        }
+    </style>
+</head>
+<body>
+    <section class="intro-3d-container">
+        <canvas id="introCanvas" class="intro-3d-canvas"></canvas>
+        <div class="intro-overlay-text">Discover the new Era</div>
+    </section>
+
+    <!-- Floating Phone Selector -->
+    <div class="phone-selector-container">
+        <label for="phone-selector" class="form-label">Compare with:</label>
+        <select id="phone-selector" class="form-control phone-selector">
+            <option value="">Select a phone to compare</option>
+        </select>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">YonseiCS JSPhone T30</h1>
+                <p class="hero-subtitle">Experience the future of mobile technology</p>
+                <div class="hero-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Camera</span>
+                        <span class="spec-value">173 Score</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">RAM</span>
+                        <span class="spec-value">24GB</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Storage</span>
+                        <span class="spec-value">1536GB</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Battery</span>
+                        <span class="spec-value">6661mAh</span>
+                    </div>
+                </div>
+                <p class="hero-cta">Select a phone above to see how JSPhone T30 compares</p>
+            </div>
+        </div>
+    <div class="section-model-viewer" id="jsphone-model-viewer"></div>
+    </section>
+
+    <!-- Camera Comparison Section -->
+    <section id="camera" class="comparison-section">
+        <div class="container">
+            <div class="comparison-content">
+                <div class="comparison-header">
+                    <h2 class="section-title">Camera Quality</h2>
+                    <div class="percentage-display">
+                        <span class="percentage-number" id="camera-percentage">--</span>
+                        <span class="percentage-sign">%</span>
+                    </div>
+                </div>
+                <p class="comparison-statement" id="camera-statement">
+                    Select a phone to see how JSPhone T30's camera compares
+                </p>
+                <div class="spec-comparison">
+                    <div class="spec-card jsphone-spec">
+                        <h3>JSPhone T30</h3>
+                        <div class="spec-value-large">173</div>
+                        <div class="spec-label">Camera Score</div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="spec-card competitor-spec">
+                        <h3 id="camera-competitor-name">Competitor</h3>
+                        <div class="spec-value-large" id="camera-competitor-value">--</div>
+                        <div class="spec-label">Camera Score</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="section-model-viewer" id="camera-model-viewer"></div>
+    </section>
+
+    <!-- Processor Comparison Section -->
+    <section id="processor" class="comparison-section">
+        <div class="container">
+            <div class="comparison-content">
+                <div class="comparison-header">
+                    <h2 class="section-title">Processor Performance</h2>
+                    <div class="percentage-display">
+                        <span class="percentage-number" id="processor-percentage">--</span>
+                        <span class="percentage-sign">%</span>
+                    </div>
+                </div>
+                <p class="comparison-statement" id="processor-statement">
+                    Select a phone to see how JSPhone T30's processor compares
+                </p>
+                <div class="spec-comparison">
+                    <div class="spec-card jsphone-spec">
+                        <h3>JSPhone T30</h3>
+                        <div class="spec-value-large">1,925,777</div>
+                        <div class="spec-label">Processor Score</div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="spec-card competitor-spec">
+                        <h3 id="processor-competitor-name">Competitor</h3>
+                        <div class="spec-value-large" id="processor-competitor-value">--</div>
+                        <div class="spec-label">Processor Score</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="section-model-viewer" id="processor-model-viewer"></div>
+    </section>
+
+    <!-- RAM & Storage Comparison Section -->
+    <section id="memory" class="comparison-section">
+        <div class="container">
+            <div class="comparison-content">
+                <div class="comparison-header">
+                    <h2 class="section-title">RAM & Storage</h2>
+                    <div class="percentage-display">
+                        <span class="percentage-number" id="memory-percentage">--</span>
+                        <span class="percentage-sign">%</span>
+                    </div>
+                </div>
+                <p class="comparison-statement" id="memory-statement">
+                    Select a phone to see how JSPhone T30's memory compares
+                </p>
+                <div class="spec-comparison">
+                    <div class="spec-card jsphone-spec">
+                        <h3>JSPhone T30</h3>
+                        <div class="memory-specs">
+                            <div class="memory-item">
+                                <div class="spec-value-large">24GB</div>
+                                <div class="spec-label">RAM</div>
+                            </div>
+                            <div class="memory-item">
+                                <div class="spec-value-large">1536GB</div>
+                                <div class="spec-label">Storage</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="spec-card competitor-spec">
+                        <h3 id="memory-competitor-name">Competitor</h3>
+                        <div class="memory-specs">
+                            <div class="memory-item">
+                                <div class="spec-value-large" id="memory-competitor-ram">--</div>
+                                <div class="spec-label">RAM</div>
+                            </div>
+                            <div class="memory-item">
+                                <div class="spec-value-large" id="memory-competitor-storage">--</div>
+                                <div class="spec-label">Storage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="section-model-viewer" id="memory-model-viewer"></div>
+    </section>
+
+    <!-- Battery Comparison Section -->
+    <section id="battery" class="comparison-section">
+        <div class="container">
+            <div class="comparison-content">
+                <div class="comparison-header">
+                    <h2 class="section-title">Battery Capacity</h2>
+                    <div class="percentage-display">
+                        <span class="percentage-number" id="battery-percentage">--</span>
+                        <span class="percentage-sign">%</span>
+                    </div>
+                </div>
+                <p class="comparison-statement" id="battery-statement">
+                    Select a phone to see how JSPhone T30's battery compares
+                </p>
+                <div class="spec-comparison">
+                    <div class="spec-card jsphone-spec">
+                        <h3>JSPhone T30</h3>
+                        <div class="spec-value-large">6,661</div>
+                        <div class="spec-label">mAh</div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="spec-card competitor-spec">
+                        <h3 id="battery-competitor-name">Competitor</h3>
+                        <div class="spec-value-large" id="battery-competitor-value">--</div>
+                        <div class="spec-label">mAh</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="section-model-viewer" id="battery-model-viewer"></div>
+    </section>
+
+    <!-- Display Comparison Section -->
+    <section id="display" class="comparison-section">
+        <div class="container">
+            <div class="comparison-content">
+                <div class="comparison-header">
+                    <h2 class="section-title">Display Size</h2>
+                    <div class="percentage-display">
+                        <span class="percentage-number" id="display-percentage">--</span>
+                        <span class="percentage-sign">%</span>
+                    </div>
+                </div>
+                <p class="comparison-statement" id="display-statement">
+                    Select a phone to see how JSPhone T30's display compares
+                </p>
+                <div class="spec-comparison">
+                    <div class="spec-card jsphone-spec">
+                        <h3>JSPhone T30</h3>
+                        <div class="spec-value-large">7.1"</div>
+                        <div class="spec-label">Display</div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="spec-card competitor-spec">
+                        <h3 id="display-competitor-name">Competitor</h3>
+                        <div class="spec-value-large" id="display-competitor-value">--</div>
+                        <div class="spec-label">Display</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="section-model-viewer" id="display-model-viewer"></div>
+    </section>
+
+    <!-- Weight Comparison Section -->
+    <section id="weight" class="comparison-section">
+        <div class="container">
+            <div class="comparison-content">
+                <div class="comparison-header">
+                    <h2 class="section-title">Weight & Portability</h2>
+                    <div class="percentage-display">
+                        <span class="percentage-number" id="weight-percentage">--</span>
+                        <span class="percentage-sign">%</span>
+                    </div>
+                </div>
+                <p class="comparison-statement" id="weight-statement">
+                    Select a phone to see how JSPhone T30's weight compares
+                </p>
+                <div class="spec-comparison">
+                    <div class="spec-card jsphone-spec">
+                        <h3>JSPhone T30</h3>
+                        <div class="spec-value-large">173g</div>
+                        <div class="spec-label">Weight</div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="spec-card competitor-spec">
+                        <h3 id="weight-competitor-name">Competitor</h3>
+                        <div class="spec-value-large" id="weight-competitor-value">--</div>
+                        <div class="spec-label">Weight</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="preorder.html" class="btn btn--primary" style="margin-right: 250px; display: inline-block;">
+            Pre-Register for JSPhone T30 Now!
+        </a>
+    </section>
+    
+
+    <script type="module">
+        const canvas = document.getElementById('introCanvas');
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xfafafa);
+    
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0, 6);
+    
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    
+        const light = new THREE.DirectionalLight(0xffffff, 2);
+        light.position.set(3, 3, 3);
+        scene.add(light);
+        scene.add(new THREE.AmbientLight(0xffffff, 1));
+    
+        const loader = new GLTFLoader();
+        loader.load('./assets/jsphone.glb', (gltf) => {
+          const model = gltf.scene;
+          centerAndScale(model, 2.5);
+          scene.add(model);
+          animate(model);
+        });
+    
+        function animate(model) {
+          requestAnimationFrame(() => animate(model));
+          model.rotation.y += 0.01;
+          renderer.render(scene, camera);
+        }
+    
+        function centerAndScale(model, targetWidth = 1.25) {
+          const box = new THREE.Box3().setFromObject(model);
+          const center = new THREE.Vector3();
+          const size = new THREE.Vector3();
+          box.getCenter(center);
+          box.getSize(size);
+          model.scale.setScalar(targetWidth / size.x / 1.5);
+          model.position.sub(center);
+        }
+    
+        const phoneSelector = document.querySelector('.phone-selector-container');
+        phoneSelector.style.display = 'none';
+
+        function scrollToHeroSection() {
+          const target = document.getElementById('hero');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            phoneSelector.style.display = 'block';
+          }
+        }
+
+        setTimeout(scrollToHeroSection, 5000);
+    
+        window.addEventListener('resize', () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
