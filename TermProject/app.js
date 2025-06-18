@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = 'hidden'; // Prevent scrolling during loading
     setTimeout(() => {
         document.body.style.overflow = 'auto';
-      }, 6000);
+      }, 9000);
     console.log('DOM loaded, initializing app...');
 
     fetch('./app_data.json')
